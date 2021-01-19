@@ -1,9 +1,12 @@
-
+import 'fontsource-roboto';
+import BasicTable from "./components/Table/Table.jsx";
+import MediaCard from "./components/Card/Card";
 
 function App() {
   return (
     <div>
-      <h1> Hello World! </h1>
+      <BasicTable />
+      <MediaCard />
     </div>
   );
 }
