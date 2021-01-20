@@ -6,6 +6,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import API from "../../utils/API";
 
 const useStyles = makeStyles({
   table: {
@@ -16,6 +17,16 @@ const useStyles = makeStyles({
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
+
+const getPeople = query => {
+    API.search(query)
+      .then(res => {
+          console.log(res.data.results);
+      })
+      .catch(err => console.log(err));
+  };
+
+  getPeople();
 
 const rows = [
   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
