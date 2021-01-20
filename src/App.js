@@ -21,7 +21,6 @@ const App = () => {
   useEffect(() => {
     API.search()
       .then(res => {
-        console.log(res);
           setEmployeeState(res.data.results);
       })
       .catch(err => console.log(err));
@@ -46,6 +45,7 @@ const App = () => {
             cell={emp.cell}
             email={emp.email}
             picture={emp.picture.large}
+            key={emp.id.value}
           />
         ))}
     </div>
