@@ -1,22 +1,17 @@
 import React from "react";
-import Table from "./containers/Table/Table.jsx";
+import Main from "./containers/Main/Main.jsx";
 
 const App = () => {
   return (
     <div>
       <div className="container" >
         <div className="row">
-          <div className="col-sm">
-            <h1 className="text-center">Employee Tracker</h1>
-            <h5 className="text-center">A convenient way to search for employees</h5>
+          <div className="col text-center">
+            <h1 className="text-center">Employee Directory</h1>
+            <h5 className="text-center">A convenient way to search for co-workers</h5>
           </div>
         </div>
-        <div className="row">
-          <div className="col-sm">
-            {/* Table container */}
-            <Table />
-          </div>
-        </div>
+        <Main />         
       </div>
     </div>
   );
