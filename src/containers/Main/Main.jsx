@@ -64,7 +64,7 @@ const Main = () => {
               </i> 
           </button>
         </span> 
-        Name 
+        <span> Name </span> 
         <span>
           <button onClick={handleSortDownName} >
              <i className="fas fa-angle-double-down">
