@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Employee-Directory
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  
+  ## **Table of Contents**
+  * [Live Link](#live-link)
+  * [Description](#description)
+  * [Demo](#demo)
+  * [Contributors](#contributors)
+  * [Technology](#technology-stack)
+  * [Questions](#questions)
+  * [License](#license)
+      
+  ## **Live-Link**
+https://reanderson89.github.io/employee-directory/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  ## **Description**
+  This app offers users an easy place to go for some basic information of their co-workers. The user can scroll through the employees listed, they can also sort the employees by their respective names using the arrows next to the "Name" heading. The user also has the capability of searching for the employee they are looking for by either their Name, Phone, and/or email. The search by is made in such a way that the user does not need to select the category they wish to search in, all they need to do is type in the information they are after.
 
-## Available Scripts
+  ## **Demo**
+  ![home page](images/emp-dir.gif)
 
-In the project directory, you can run:
+      
+   ## **Contributors**
+   [Robert Anderson](https://github.com/reanderson89)
 
-### `npm start`
+  ## **Technology-Stack**
+  javascript, node.js, react, css, axios, bootstrap
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  ## **Questions**   
+  ####    **For any questions or inquiries please contact**
+    **Robert Anderson**
+  * #### **GitHub:** [@reanderson89](https://github.com/reanderson89)
+  * #### **Email:** reanderson89@gmail.com
 
-### `npm test`
+   
+  ## **License**
+  MIT
+      
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
