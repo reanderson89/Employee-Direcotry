@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import Row from "../../components/Row/Row";
 import API from "../../utils/API";
-import "./Table.css";
+import "./Main.css";
 
+// creating state hooks that can be used to render the page on change
 const Main = () => {
     const [employeeState, setEmployeeState] = useState([]);
     const [search, setSearch] = useState("");
 
+    // make an API call when the page loads
   useEffect(() => {
     API.search()
       .then(res => {
@@ -15,49 +17,22 @@ const Main = () => {
       .catch(err => console.log(err));
   }, []);
 
-  // const handleNameSort = () => {
-  //   const spreadEmployee = [...employeeState];
-  //   const sortedEmployees = spreadEmployee.sort((a,b) => (a.name.first > b.name.first) ? 1 :(a.name.first === b.name.first) ? ((a.name.last > b.name.last) ? 1 : -1) : -1 );
-  //   console.log(sortedEmployees);
-  //   setEmployeeState(sortedEmployees);
-  // };
-
-  // const handleSortUp = () => {
-  //   const spreadEmployee = [...employeeState];
-  //   const sortedEmployees = spreadEmployee.sort((a,b) => {
-  //     if (a.name.first > b.name.first){
-  //       return 1;
-  //     } else if (b.name.first > a.name.first){
-  //       return -1;
-  //     }
-  //   });
-  //   setEmployeeState(sortedEmployees);
-  // };
-
-  // const handleSortDown = () => {
-  //   const spreadEmployee = [...employeeState];
-  //   const sortedEmployees = spreadEmployee.sort((a,b) => {
-  //     if (a.name.first > b.name.first){
-  //       return -1;
-  //     } else if (b.name.first > a.name.first){
-  //       return 1;
-  //     }
-  //   });
-  //   setEmployeeState(sortedEmployees);
-  // };
   
-  const handleSortUpName = (event) => {
+  // sorts the names from A-Z, if the first names are the same, it sorts by last name.
+  const handleSortUpName = () => {
     const spreadEmployee = [...employeeState];
-    const sortedEmployees = spreadEmployee.sort((a,b) => (a.name.first > b.name.first ? 1 : -1))
+    const sortedEmployees = spreadEmployee.sort((a,b) => (a.name.first > b.name.first) ? 1 : (a.name.first === b.name.first) ? ((a.name.last > b.name.last)? 1 : -1): -1)
     setEmployeeState(sortedEmployees);
   };
 
+    // sorts the names from Z-A, if the first names are the same, it sorts by last name.
   const handleSortDownName = () => {
     const spreadEmployee = [...employeeState];
-    const sortedEmployees = spreadEmployee.sort((a,b) => (b.name.first > a.name.first ? 1 : -1))
+    const sortedEmployees = spreadEmployee.sort((a,b) => (b.name.first > a.name.first) ? 1 : (b.name.first > a.name.first) ? ((b.name.last > a.name.last) ?1 : -1): -1)
     setEmployeeState(sortedEmployees);
   };
 
+  // filters the search results as the search value is typed
   const handleInputChange = event => {
     let value = event.target.value;
     setSearch(value);
@@ -65,12 +40,12 @@ const Main = () => {
 
     return (
       <>
-      <div className="row">
+      <div style={{backgroundColor: "teal", color: "white"}} className="row">
       <div className="col-sm-4">
       </div>
         <div className="col-sm-4">
           <div className="input-group" >
-      <input type="text" className="form-control" name="search" value={search} onChange={handleInputChange} />
+      <input type="text" className="form-control mb-3 mt-3" name="search" value={search} onChange={handleInputChange} placeholder="Search"/>
       </div>
       <div className="col-sm-4">
       </div>
@@ -79,16 +54,30 @@ const Main = () => {
       <div className="row">
           <div className="col-sm">
         <table className="table table-hover">
-  <thead className="text-center" >
+  <thead className="text-center">
     <tr>
       <th scope="col">Picture</th>
-      <th scope="col"><span><button onClick={handleSortUpName} ><i className="fas fa-angle-double-up"></i> </button></span> Name <span><button onClick={handleSortDownName} > <i className="fas fa-angle-double-down"></i></button></span></th>
+      <th scope="col">
+        <span>
+          <button onClick={handleSortUpName} >
+            <i className="fas fa-angle-double-up">
+              </i> 
+          </button>
+        </span> 
+        Name 
+        <span>
+          <button onClick={handleSortDownName} >
+             <i className="fas fa-angle-double-down">
+               </i>
+          </button>
+        </span>
+      </th>
       <th scope="col">Phone</th>
       <th scope="col">Email</th>
     </tr>
   </thead>
   <tbody className="text-center">
-      {/* Row component */}
+      {/* Row component: The .filter function is a part that enables the live filtering you see on the site, then the .map creates the rows of employees that get filtered. */}
       {employeeState
       .filter(
        emp => emp.name.first.toLowerCase().includes(search.toLowerCase()) ||

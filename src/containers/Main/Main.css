@@ -1,3 +1,5 @@
+/* Makes the buttons not look like buttons */
+
 button {
     background: none!important;
     border: none;
